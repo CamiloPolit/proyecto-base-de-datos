@@ -1,12 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from './context/AppContext';
-
+import {
+  useNavigate,
+} from "react-router-dom";
 
 export default function Right_half() {
   const [randomNumber, setRandomNumber] = useState('');
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const { isContainerVisible, setIsContainerVisible } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const generateRandomNumber = () => {
     const number = Math.floor(Math.random() * 100000) + 1;
@@ -28,12 +31,14 @@ export default function Right_half() {
       }
       const result = await response.json();
       setData(result);
-      setIsContainerVisible(false);
+      
     } catch (error) {
       console.error('Error recuperando los datos:', error);
       setHasError(true);
     }
     setLoading(false);
+    setIsContainerVisible(false);
+    navigate(`/users/${randomNumber}`)
   };
 
   if (loading) {
@@ -44,10 +49,6 @@ export default function Right_half() {
       </>)
 
 }
-
-  if (!isContainerVisible) {
-    return null;
-  }
 
   return (
     <div className="form-container">
