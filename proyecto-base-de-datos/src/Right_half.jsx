@@ -5,6 +5,7 @@ import { AppContext } from './context/AppContext';
 export default function Right_half() {
   const [randomNumber, setRandomNumber] = useState('');
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const { isContainerVisible, setIsContainerVisible } = useContext(AppContext);
 
   const generateRandomNumber = () => {
@@ -18,7 +19,7 @@ export default function Right_half() {
 
   const fetchData = async () => {
     setLoading(true);
-
+    setHasError(false);
     try {
       const response = await fetch('https://api.example.com/data');
 
@@ -30,6 +31,7 @@ export default function Right_half() {
       setIsContainerVisible(false);
     } catch (error) {
       console.error('Error recuperando los datos:', error);
+      setHasError(true);
     }
     setLoading(false);
   };
@@ -59,7 +61,7 @@ export default function Right_half() {
             </g>
           </svg>
           <input
-            className="input"
+            className={`input ${hasError ? 'error' : ''}`}
             type="text" 
             value={randomNumber}
             placeholder="Buscar"

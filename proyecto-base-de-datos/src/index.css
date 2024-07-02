@@ -133,6 +133,11 @@ background-color: #fff;
 box-shadow: 0 0 0 4px rgb(247 127 0 / 10%);
 }
 
+.error {
+  background-color: #ffdddd;
+  border-color: #c00000;
+}
+
 .icon {
 position: absolute;
 left: 1rem;
