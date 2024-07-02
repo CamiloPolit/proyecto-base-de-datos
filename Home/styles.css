@@ -83,6 +83,18 @@ body {
   flex-direction: column;
 }
 
+#aleatorio {
+  color: rgb(150, 118, 108);
+  font-weight: 550;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+#aleatorio:hover {
+  cursor: pointer;
+  color: rgb(99, 33, 13);
+}
+
 /* INICIO DE CÓDIGO PARA LA BARRA DE BÚSQUEDA */
 
 .group {
@@ -91,7 +103,7 @@ body {
   align-items: center;
   position: relative;
   max-width: 190px;
-  padding: 15px 0px;
+  padding-top: 15px;
 }
 
 .input {
@@ -165,4 +177,3 @@ input:hover {
 }
 
  /* TÉRMINO DE CÓDIGO PARA EL BOTÓN */
-
