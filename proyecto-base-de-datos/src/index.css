@@ -239,7 +239,7 @@ padding-bottom: 1px;
   position: absolute;
   top: 20px;
   left: 25px;
-  width: 40px;
+  width: 27px;
 }
 
 .fotohome:hover {
@@ -331,9 +331,9 @@ padding-bottom: 1px;
 
 .codigo-usuario p {
   font-family: "Inter";
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: 600;
-  color: rgb(51, 50, 52)
+  color: rgb(124, 109, 109)
   
 }
 
