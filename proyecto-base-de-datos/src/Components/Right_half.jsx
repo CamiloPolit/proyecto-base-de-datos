@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import {
-  useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Right_half() {
   const [randomNumber, setRandomNumber] = useState('');
@@ -20,7 +18,16 @@ export default function Right_half() {
     setRandomNumber(e.target.value);
   };
 
+  const isValidNumber = (value) => {
+    const number = parseInt(value, 10);
+    return Number.isInteger(number) && number >= 1 && number <= 100000;
+  };
+
   const fetchData = async () => {
+    if (!isValidNumber(randomNumber)) {
+      setHasError(true);
+      return;
+    }
     setLoading(true);
     setHasError(false);
     try {
@@ -30,7 +37,7 @@ export default function Right_half() {
         throw new Error('Operación no autorizada');
       }
       const result = await response.json();
-      setData(result);
+      // setData(result); // Este setData no está definido, asegúrate de definirlo si lo necesitas.
       
     } catch (error) {
       console.error('Error recuperando los datos:', error);
@@ -38,7 +45,7 @@ export default function Right_half() {
     }
     setLoading(false);
     setIsContainerVisible(false);
-    navigate(`/users/${randomNumber}`)
+    navigate(`/users/${randomNumber}`);
   };
 
   if (loading) {
@@ -46,9 +53,9 @@ export default function Right_half() {
       <>
         <div className="loading">Cargando...</div>
         <div className="loader"></div>
-      </>)
-
-}
+      </>
+    );
+  }
 
   return (
     <div className="form-container">
@@ -72,6 +79,7 @@ export default function Right_half() {
         <p id="aleatorio" onClick={generateRandomNumber}>
           Generar código aleatorio
         </p>
+        {hasError && <p className="error-message">El número debe estar entre 1 y 100000</p>}
         <button className="button" type="button" onClick={fetchData}>
           Verificar
           <svg className="cartIcon" viewBox="0 0 576 512">
