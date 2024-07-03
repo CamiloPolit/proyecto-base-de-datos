@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AppContext } from './context/AppContext';
+import { AppContext } from '../context/AppContext.jsx';
 import Right_half from "./Right_half.jsx";
 import Left_half from "./Left_half.jsx";
 import { Outlet } from "react-router-dom";

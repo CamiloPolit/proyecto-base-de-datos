@@ -1,10 +1,10 @@
-import BasicTable from "./Tabla.jsx"
-import MenuPopupState from "./Menu.jsx"
+import BasicTable from "../Components/Tabla.jsx"
+import MenuPopupState from "../Components/Menu.jsx"
 import { useParams, Link } from 'react-router-dom';
-import fotohome from './home.png'; 
+import fotohome from '../assets/images/home.png'; 
 import TextField from '@mui/material/TextField';
 import React, { useContext } from 'react';
-import { AppContext } from './context/AppContext';
+import { AppContext } from '../context/AppContext.jsx';
 
 export default function Users() {
     const { userID } = useParams();

@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import Users from './Users.jsx'
-import ErrorPage from './ErrorPage.jsx'
+import App from '../pages/App.jsx'
+import Users from '../pages/Users.jsx'
+import ErrorPage from '../pages/ErrorPage.jsx'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
-import { AppProvider } from './context/AppContext';
+import '../index.css'
+import { AppProvider } from '../context/AppContext.jsx';
 
 const router = createBrowserRouter([
   {

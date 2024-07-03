@@ -1,5 +1,5 @@
-import fotomercado from './404/foto-tienda.png';
-import error from './404/404.jpg';
+import fotomercado from '../assets/images/foto-tienda.png';
+import error from '../assets/images/404.jpg';
 import {Link } from 'react-router-dom';
 
 

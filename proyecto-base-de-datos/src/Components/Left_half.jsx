@@ -1,4 +1,4 @@
-import mercaderiaImg from './Home/fotos-mercaderia.png';
+import mercaderiaImg from '../assets/images/fotos-mercaderia.png';
 
 export default function Left_half() {
     return (

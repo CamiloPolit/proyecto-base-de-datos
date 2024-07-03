@@ -1,4 +1,4 @@
-import Contenedor from "./Contenedor.jsx"
+import Contenedor from "../Components/Contenedor.jsx"
 
 export default function App() {
   return (
