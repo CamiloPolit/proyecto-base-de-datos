@@ -28,10 +28,10 @@ export default function Users() {
                             </div>
                             
                             <div class="InputContainer">
-                                <TextField id="standard-basic" label="Standard" variant="standard" />
+                                <TextField id="standard-basic" label="Buscar por filtro seleccionado" variant="standard" />
                             </div>
                         </div>
-                        
+
                         <div className="table-wrapper">
                             <BasicTable />
                         </div>

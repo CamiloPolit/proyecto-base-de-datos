@@ -226,6 +226,11 @@ padding-bottom: 1px;
   margin-top: 50px;
 }
 
+.InputContainer {
+  position: relative;
+  bottom: 5px;
+}
+
 .controlador-menu {
   padding-right: 20px;
 }
@@ -323,3 +328,11 @@ padding-bottom: 1px;
 }
 
 /* TERMINO DE CÓDIGO PARA BOTÓN DE ERRORES */
+
+.codigo-usuario p {
+  font-family: "Inter";
+  font-size: 1em;
+  font-weight: 600;
+  color: rgb(51, 50, 52)
+  
+}
