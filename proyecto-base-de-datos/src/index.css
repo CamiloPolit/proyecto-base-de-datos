@@ -336,3 +336,16 @@ padding-bottom: 1px;
   color: rgb(51, 50, 52)
   
 }
+
+.contenedor-filtros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-filtros p {
+  color: rgb(124, 109, 109);
+  font-size: 0.9em;
+  margin-top: 10px;
+}

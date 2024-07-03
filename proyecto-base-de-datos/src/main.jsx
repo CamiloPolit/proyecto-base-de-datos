@@ -27,5 +27,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AppProvider>
     <RouterProvider router={router} />
-  </AppProvider>,
+  </AppProvider>
 )
