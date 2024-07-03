@@ -5,6 +5,8 @@ import MenuPopupState from '../Components/Menu.jsx';
 import fotohome from '../assets/images/home.png';
 import TextField from '@mui/material/TextField';
 import { AppContext } from '../context/AppContext.jsx';
+import Button from '@mui/material/Button';
+
 
 export default function Users() {
     const { userID } = useParams();
@@ -14,6 +16,7 @@ export default function Users() {
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [rows, setRows] = useState([]);
 
     // Definir el diccionario de mapeo con información sobre si requiere userID
     const filtroMap = {
@@ -58,6 +61,35 @@ export default function Users() {
         }
     };
 
+    const fetchDataForTable = async () => {
+        setLoading(true);
+        setError(null);
+        setRows([]); // Limpiar las filas antes de la nueva solicitud
+
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/id/${userID}`);
+            if (!response.ok) {
+                throw new Error('Hubo un error al obtener los datos de las órdenes usados para cargar la tabla, intente nuevamente.');
+            }
+            const result = await response.json();
+
+            // Transformar los datos obtenidos en un formato adecuado para la tabla
+            const transformedRows = result.flatMap(order =>
+                order.products.map(product => ({
+                    order_id: order.order_id,
+                    aisle: product.aisle,
+                    department: product.department,
+                    product_name: product.product_name
+                }))
+            );
+            setRows(transformedRows);
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
@@ -77,10 +109,13 @@ export default function Users() {
                             <img src={fotohome} className="fotohome" alt="Home" />
                         </Link>
 
-                        <div className="codigo-usuario">
-                            <p>ID de usuario: {userID}</p>
-                        </div>
+                        <button class="disclaimer">DISCLAIMER:<br></br> La carga de los datos varía según el usuario y puede tardar entre 2 a 30 segundos.</button>
+
                         <div className="contenedor-filtros">
+                            <div className="codigo-usuario">
+                                <p>ID de usuario: {userID}</p>
+                            </div>
+
                             <div className="container-filtros">
                                 <div className="controlador-menu">
                                     <MenuPopupState />
@@ -113,12 +148,18 @@ export default function Users() {
                             ) : numFiltro === 3 ? (
                                 <p>Se vendieron {orderCount} productos.</p>
                             ) : null}
-
                         </div>
 
                         <div className="table-wrapper">
-                            <BasicTable />
+                            <BasicTable rows={rows} />
+                            <div className="carga-datos">
+                                <Button variant="contained" style = {{width: "100px", fontSize: "0.7em"}} color="primary" onClick={fetchDataForTable}>
+                                Cargar Datos
+                                </Button>
+                            </div>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>
