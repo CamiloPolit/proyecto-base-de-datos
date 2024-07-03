@@ -28,7 +28,7 @@ export default function Users() {
                             </div>
                             
                             <div class="InputContainer">
-                                <TextField id="standard-basic" label="Buscar por filtro seleccionado" variant="standard" />
+                                <TextField id="standard-basic" label="Buscar por filtro seleccionado" variant="standard" style={{ width: '250px' }} />
                             </div>
                         </div>
 
