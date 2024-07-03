@@ -109,7 +109,7 @@ export default function Users() {
                             <img src={fotohome} className="fotohome" alt="Home" />
                         </Link>
 
-                        <button class="disclaimer">DISCLAIMER:<br></br> La carga de los datos varía según el usuario y puede tardar entre 2 a 30 segundos.</button>
+                        <button class="disclaimer">DISCLAIMER:<br></br> La carga de los datos varía según el usuario y puede tardar entre 2 a 40 segundos, sin embargo, no es necesario cargarlos para aplicar filtros.</button>
 
                         <div className="contenedor-filtros">
                             <div className="codigo-usuario">
