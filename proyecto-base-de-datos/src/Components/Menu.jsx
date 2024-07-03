@@ -7,13 +7,20 @@ import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
 
 export default function MenuPopupState() {
-  const { setFiltroSeleccionado } = useContext(AppContext);
+  const { setFiltroSeleccionado, setNumFiltro } = useContext(AppContext);
+
+  // Definir el diccionario de mapeo con información sobre si requiere userID
+  const filtroMap = {
+    '¿Cuántos productos he comprado del [departament] entre todos mis pedidos?': { id: 1, requiresUserID: true },
+    '¿A qué pasillo y categoría corresponde [product_name]?': { id: 2, requiresUserID: false },
+    '¿Cuántos productos se vendieron de [aisle]?': { id: 3, requiresUserID: false }
+  };
 
   const handleMenuItemClick = (popupState, filtro) => {
     console.log('Selected filtro:', filtro);
     setFiltroSeleccionado(filtro);
+    setNumFiltro(filtroMap[filtro].id); // Usar el diccionario para obtener el número del filtro
     popupState.close();
-    
   };
 
   return (
@@ -24,9 +31,11 @@ export default function MenuPopupState() {
             Filtros
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿Cuántos productos he comprado del [departament] entre todos mis pedidos?')}>¿Cuántos productos he comprado del [departament] entre todos mis pedidos?</MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿A qué pasillo y categoría corresponde [product_name]?')}>¿A qué pasillo y categoría corresponde [product_name]?</MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿Cuántos productos se vendieron de [aisle]?')}>¿Cuántos productos se vendieron de [aisle]?</MenuItem>
+            {Object.keys(filtroMap).map((filtro) => (
+              <MenuItem key={filtro} onClick={() => handleMenuItemClick(popupState, filtro)}>
+                {filtro}
+              </MenuItem>
+            ))}
           </Menu>
         </React.Fragment>
       )}
