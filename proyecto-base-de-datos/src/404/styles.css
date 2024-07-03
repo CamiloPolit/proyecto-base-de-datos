@@ -5,7 +5,7 @@
     font-family: "Inter", sans-serif;
 }
 
-body {
+.otrocontenedor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@ body {
     width: 100vw;
 }
 
-.container {
+.container2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ body {
     height: 80%;
 }
 
-.left-half, .right-half {
+.left-half2, .right-half2 {
     display: flex;
     justify-content: center;
     width: 50%;
@@ -74,13 +74,13 @@ button {
     box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
   }
   
-  button:hover {
+button:hover {
     opacity: 1;
-  }
-  
-  button:active {
+}
+
+button:active {
     top: 4px;
     box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
-  }
+}
 
 /* TERMINO DE CÓDIGO PARA BOTÓN */

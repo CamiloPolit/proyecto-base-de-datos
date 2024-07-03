@@ -107,7 +107,7 @@ max-width: 190px;
 padding-top: 15px;
 }
 
-.input {
+.inputmain {
 width: 100%;
 height: 40px;
 line-height: 28px;
@@ -121,12 +121,12 @@ color: #0d0c22;
 transition: 0.3s ease;
 }
 
-.input::placeholder {
+.inputmain::placeholder {
 color: #9e9ea7;
 }
 
-.input:focus,
-input:hover {
+.inputmain:focus,
+.inputmain:hover {
 outline: none;
 border-color: rgba(247, 127, 0, 0.4);
 background-color: #fff;
@@ -199,3 +199,127 @@ padding-bottom: 1px;
 @keyframes l13{ 
   100%{transform: rotate(1turn)}
 }
+
+/* LOADER */
+
+/* TABLA */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.table-wrapper {
+  padding: 50px;
+}
+
+/* TABLA */
+
+.container-filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.controlador-menu {
+  padding-right: 20px;
+}
+
+.fotohome {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 40px;
+}
+
+.fotohome:hover {
+  cursor: pointer;
+}
+
+/* COMPONENTE DE ERRORES */
+.otrocontenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+}
+
+.left-half2, .right-half2 {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.foto-tienda {
+  width: 500px;
+}
+
+.textos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textos h1 {
+  color: #bc6106;
+  padding: 15px 0;
+}
+
+.textos p {
+  color: #fb932a;
+  font-size: 1.3em;
+  font-weight: 750;
+  margin-bottom: 30px;
+}
+
+.error {
+
+  width: 200px;
+}
+
+/* COMPONENTE DE ERRORES */
+
+/* INICIO DE CÓDIGO PARA BOTÓN DE ERRORES*/
+
+#botonerror {
+  --bg: #e74c3c;
+  --text-color: #fff;
+  position: relative;
+  width: 150px;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color);
+  padding: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  border-radius: 5px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  box-shadow: #c0392b 0px 7px 2px, #000 0px 8px 5px;
+}
+
+#botonerror:hover {
+  opacity: 1;
+}
+
+#botonerror:active {
+  top: 4px;
+  box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
+}
+
+/* TERMINO DE CÓDIGO PARA BOTÓN DE ERRORES */

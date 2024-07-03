@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Users from './Users.jsx'
+import ErrorPage from './ErrorPage.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/users/:userID",

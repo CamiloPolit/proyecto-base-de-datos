@@ -62,7 +62,7 @@ export default function Right_half() {
             </g>
           </svg>
           <input
-            className={`input ${hasError ? 'error' : ''}`}
+            className={`inputmain ${hasError ? 'error' : ''}`}
             type="text" 
             value={randomNumber}
             placeholder="Buscar"
