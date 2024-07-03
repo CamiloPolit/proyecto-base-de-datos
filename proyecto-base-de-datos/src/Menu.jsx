@@ -24,9 +24,9 @@ export default function MenuPopupState() {
             Filtros
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, 'Profile')}>Profile</MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, 'My account')}>My account</MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick(popupState, 'Logout')}>Logout</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿Cuántos productos he comprado del [departament] entre todos mis pedidos?')}>¿Cuántos productos he comprado del [departament] entre todos mis pedidos?</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿A qué pasillo y categoría corresponde [product_name]?')}>¿A qué pasillo y categoría corresponde [product_name]?</MenuItem>
+            <MenuItem onClick={() => handleMenuItemClick(popupState, '¿Cuántos productos se vendieron de [aisle]?')}>¿Cuántos productos se vendieron de [aisle]?</MenuItem>
           </Menu>
         </React.Fragment>
       )}
