@@ -227,6 +227,14 @@ padding-bottom: 1px;
   margin-top: 50px;
 }
 
+.contenedor-filtros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
 .InputContainer {
   position: relative;
   bottom: 5px;
@@ -331,26 +339,23 @@ padding-bottom: 1px;
 /* TERMINO DE CÓDIGO PARA BOTÓN DE ERRORES */
 
 .codigo-usuario p {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 16px;
+  left: 70px;
   font-family: "Inter";
   font-size: 0.95em;
   font-weight: 600;
   color: rgb(124, 109, 109)
 }
 
-.contenedor-filtros {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
-
 .contenedor-filtros p {
   color: rgb(124, 109, 109);
   font-size: 0.9em;
   margin-top: 10px;
+}
+
+.contenedor-filtros {
+  margin-top: -80px;
 }
 
 .carga-datos {
@@ -363,9 +368,8 @@ padding-bottom: 1px;
 
 .disclaimer {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 0.875rem; /* 14px */
+  top: 10px;
+  font-size: 0.7em; /* 14px */
   line-height: 1.25rem; /* 20px */
   padding: 2px .5rem; /* 8px*/
   cursor: pointer;
@@ -375,5 +379,4 @@ padding-bottom: 1px;
   background-color: rgba(239, 68, 68, 0.10);
   color: rgb(239 68 68);
   border: 1px rgb(239 68 68) solid;
-  width: 190px;
 }

@@ -109,8 +109,6 @@ export default function Users() {
                             <img src={fotohome} className="fotohome" alt="Home" />
                         </Link>
 
-                        <button class="disclaimer">DISCLAIMER:<br></br> La carga de los datos varía según el usuario y puede tardar entre 2 a 40 segundos, sin embargo, no es necesario cargarlos para aplicar filtros.</button>
-
                         <div className="contenedor-filtros">
                             <div className="codigo-usuario">
                                 <p>ID de usuario: {userID}</p>
@@ -141,9 +139,7 @@ export default function Users() {
                                 <p>Has comprado {orderCount} productos.</p>
                             ) : numFiltro === 2 ? (
                                 <div>
-                                    <p>Producto: {productInfo?.Producto}</p>
-                                    <p>Pasillo: {productInfo?.Pasillo}</p>
-                                    <p>Categoria: {productInfo?.Categoria}</p>
+                                    <p>Producto: {productInfo?.Producto}, Pasillo: {productInfo?.Pasillo}, Categoria: {productInfo?.Categoria}</p>
                                 </div>
                             ) : numFiltro === 3 ? (
                                 <p>Se vendieron {orderCount} productos.</p>
@@ -162,6 +158,9 @@ export default function Users() {
                         
                     </div>
                 </div>
+
+                <button class="disclaimer">DISCLAIMER:<br></br> La carga de los datos varía según el usuario y puede tardar entre 2 a 40 segundos, sin embargo, no es necesario cargarlos para aplicar filtros.</button>
+                
             </div>
         </>
     );
