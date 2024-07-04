@@ -9,7 +9,7 @@ def create_app():
     app.config.from_object('app.config.Config')
 
     # Configurar CORS
-    CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+    CORS(app, resources={r"/*": {"origins": ["http://grupo08.cc3201.dcc.uchile.cl/", "http://localhost:5173"]}})
 
     db.init_app(app)
 
