@@ -23,28 +23,7 @@ export default function Right_half() {
     return Number.isInteger(number) && number >= 1 && number <= 100000;
   };
 
-  const fetchData = async () => {
-    if (!isValidNumber(randomNumber)) {
-      setHasError(true);
-      return;
-    }
-    setLoading(true);
-    setHasError(false);
-    try {
-      const response = await fetch('https://api.example.com/data');
-
-      if (!response.ok) {
-        throw new Error('Operación no autorizada');
-      }
-      const result = await response.json();
-      // setData(result); // Este setData no está definido, asegúrate de definirlo si lo necesitas.
-      
-    } catch (error) {
-      console.error('Error recuperando los datos:', error);
-      setHasError(true);
-    }
-    setLoading(false);
-    setIsContainerVisible(false);
+  const fetchData = () => {
     navigate(`/users/${randomNumber}`);
   };
 
