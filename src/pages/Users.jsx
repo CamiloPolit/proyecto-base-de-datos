@@ -122,7 +122,7 @@ export default function Users() {
                                 <div className="InputContainer">
                                     <TextField 
                                         id="standard-basic"
-                                        label="Buscar por filtro seleccionado"
+                                        label="Buscar por filtro seleccionado (ENTER)"
                                         variant="standard"
                                         style={{ width: '250px' }} 
                                         onChange={handleInputChange}
