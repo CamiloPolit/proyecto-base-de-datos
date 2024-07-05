@@ -39,8 +39,8 @@ export default function Users() {
             const requiresUserID = filtroInfo.requiresUserID;
             console.log(requiresUserID);
             const url = requiresUserID
-                ? `https://grupo08.cc3201.dcc.uchile.cl/api/api${numFiltro}/${userID}/${inputValue}`
-                : `https://grupo08.cc3201.dcc.uchile.cl/api/api${numFiltro}/${inputValue}`;
+                ? `http://127.0.0.1:5000/api${numFiltro}/${userID}/${inputValue}`
+                : `http://127.0.0.1:5000/api${numFiltro}/${inputValue}`;
 
             const response = await fetch(url);
             if (!response.ok) {
@@ -67,7 +67,7 @@ export default function Users() {
         setRows([]); // Limpiar las filas antes de la nueva solicitud
 
         try {
-            const response = await fetch(`https://grupo08.cc3201.dcc.uchile.cl/api/id/${userID}`);
+            const response = await fetch(`http://127.0.0.1:5000/id/${userID}`);
             if (!response.ok) {
                 throw new Error('Hubo un error al obtener los datos de las órdenes usados para cargar la tabla, intente nuevamente.');
             }
