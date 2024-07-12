@@ -1,3 +1,5 @@
+Actualmente corriendo en proyecto-bbdd.vercel.app sin la API.
+
 ES NECESARIO TENER INSTALADO NODE, NPM Y PYTHON EN EL PC
 
 LAS DEPENDENCIAS DE PYTHON SE ENCUENTRAN EN /src/flask_app/requirements.txt
